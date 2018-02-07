@@ -1,8 +1,16 @@
 FROM node:8.9-alpine
 
-COPY package.json /superbowleto/package.json
-WORKDIR /superbowleto
+ARG NPM_ARGS
 
-RUN npm install
+ENV HOME /home
+
+COPY package.json $HOME/superbowleto/package.json
+COPY package-lock.json $HOME/superbowleto/package-lock.json
+
+WORKDIR $HOME/superbowleto
+
+RUN npm install $NPM_ARGS
+
+COPY src $HOME/superbowleto/src
 
 EXPOSE 3000
