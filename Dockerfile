@@ -11,6 +11,6 @@ WORKDIR $HOME/superbowleto
 
 RUN npm install $NPM_ARGS
 
-COPY src $HOME/superbowleto/src
+COPY . $HOME/superbowleto/src
 
 EXPOSE 3000
