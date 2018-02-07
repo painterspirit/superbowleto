@@ -42,10 +42,11 @@ services:
     environment:
       - API_ENV=test
     volumes:
-      - .:/superbowleto
-      - /superbowleto/node_modules
+      - .:/home/quarterback/superbowleto
+      - /home/quarterback/superbowleto/node_modules
     depends_on:
       - test-dependencies
+    user: '0'
 
   superbowleto-web:
     build: .
@@ -55,9 +56,6 @@ services:
     environment:
       - API_ENV=test
       - PORT=3000
-    volumes:
-      - .:/superbowleto
-      - /superbowleto/node_modules
     depends_on:
       - postgres
       - yopa
