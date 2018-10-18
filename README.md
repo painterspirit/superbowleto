@@ -41,7 +41,7 @@ and [Docker Compose](https://docs.docker.com/compose/) installed.
 
 ### First Install
 
-If you never developed in this repo before:
+If you've never developed in this repo before:
 
 1. **Clone the repository:**
   ```sh
@@ -55,7 +55,7 @@ If you never developed in this repo before:
 
 ### Running the server
 
-To run the server, you will have to start the database and run the migrations.
+To run the server, start the database and run the migrations.
 
 1. **Start database and run migrations in one command:**
 ```sh
@@ -167,7 +167,7 @@ Tests are found inside the `test/` directory and are separate by type: `function
 
   - `Helpers` do not test anything, but instead provide tools for the tests. Inside the `helpers` folders one can have `fixtures` (also know as "mocks"), or some util functions.
 
-    For instance, if you need credit card information to perform various tests in many different places, or if you need an util function that is called before your tests are ran, you could place them inside a `helpers` folder in order to not repeat yourself:
+    For instance, if you need credit card information to perform various tests in many different places, or if you need an util function that is called before your tests are ran, you can place them inside a `helpers` folder in order to not repeat yourself:
 
     ```javascript
     const creditCardMock = {
@@ -187,7 +187,7 @@ Tests are found inside the `test/` directory and are separate by type: `function
 	}
     ```
 
-    `Helpers` folders can be created at any level within the `test` folder structure. If some helper is used only for unit tests, it should reside within `test/unit/helpers`. If the helpers is used across all tests, it should reside within `test/helpers`. If there's a helper that is used only for testing the http module on integration tests, then it should reside within `test/integration/http/helpers`.
+    `Helpers` folders can be created at any level within the `test` folder structure. If some helper is used only for unit tests, it should reside within `test/unit/helpers`. If the helpers are used across all tests, they should reside within `test/helpers`. If there's a helper that is used only for testing the http module on integration tests, then it should reside within `test/integration/http/helpers`.
 
 ## Data Flow
 
